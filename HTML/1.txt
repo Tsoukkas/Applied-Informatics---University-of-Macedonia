@@ -1,0 +1,9 @@
+<p>...</p><p>...</p>
+1.to ena kato apo to alo
+2.diaforetika an ine ena ta vgazi sinexomena akomi kai an to ena ine kato apo to alo
+3.ola ta kena metafrazontai os ena keno..tis arxis kai tu telus agnoountai entelos
+4."assets/photo.jpg"....path
+5.<img src="photo.jpg" alt="Η όψη μου"> oi xaraktires emfanizontai dipla apo tin ikona
+6.<input type="checkbox" > check box
+7. <a href = "www.facebook.com">click it!</a> ipogramismeni leksi me link
+8.
