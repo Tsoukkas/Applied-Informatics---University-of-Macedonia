@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1618859734 source:c:\users\anton\desktop\a29f5project\a29f5.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+

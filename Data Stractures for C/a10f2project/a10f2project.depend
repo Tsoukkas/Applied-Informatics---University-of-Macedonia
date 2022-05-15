@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1620237432 source:c:\users\anton\desktop\a10f2project\a10f2.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

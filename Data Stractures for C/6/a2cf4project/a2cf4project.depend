@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1617641938 source:c:\users\anton\desktop\a2cf4project\a2cf4.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

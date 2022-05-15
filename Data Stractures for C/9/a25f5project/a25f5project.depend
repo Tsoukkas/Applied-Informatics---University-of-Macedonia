@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1620484456 source:c:\users\anton\desktop\a25f5project\a25f5.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

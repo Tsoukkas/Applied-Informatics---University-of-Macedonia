@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1617643476 source:c:\users\anton\desktop\a2jproject\a2jf4.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

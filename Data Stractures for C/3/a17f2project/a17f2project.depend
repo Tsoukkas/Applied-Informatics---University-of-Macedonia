@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1615636236 source:c:\users\anton\desktop\a17f2project\a17f2.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
