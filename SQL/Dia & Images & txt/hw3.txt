@@ -1,0 +1,12 @@
+1.πssn ( σid=categoryID (σname='tennis' (Specialization ⨝ Category))) ⨝ πssn ( σid=categoryID (σname='golf' (Specialization ⨝ Category)))
+2.πssn ( σid=categoryID (σname='tennis' ∨ name='ski' (Specialization ⨝ Category)))
+3.πtype σname='snowboard' (σcategoryID=id (Salesperson⨝(Specialization⨯Category)))
+4.(πname,season (πid,name,season (Category) ⨝ Category.id=categoryID (πcategoryID (σlast_spec_date ≥ date('2014-01-01') (Specialization))))) - (πname,season (πid,name,season (Category) ⨝ Category.id=categoryID (πcategoryID (σlast_spec_date ≤ date('2013-12-31') (Specialization)))))
+5.(πfirstname,lastname (πfirstname,lastname,boss (Salesperson) ⨝ Salesperson.boss=ssn (πssn (σfirstname='Bradley' and lastname='Salinas' (Salesperson)))))
+6.πtype,firstname,lastname σ(type≠'trainee' ∧ ((firstname>'G' ∧ firstname<'H') ∨ (lastname≥'M' ∧ lastname<'N'))) Salesperson
+7.
+8.
+9.Specialization - πSpecialization.ssn, Specialization.categoryID, 
+Specialization.last_spec_date (Specialization ⨝ Specialization.last_spec_date > 
+Special.last_spec_date ρSpecial Specialization)
+10.πcategoryID, type (Specialization⨝Salesperson) ÷ πtype Salesperson  

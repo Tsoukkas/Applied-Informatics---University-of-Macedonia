@@ -1,0 +1,162 @@
+-- q1 απλή προβολή πεδίων ενός πίνακα
+select pid, name
+from performer;
+
+
+-- q2 συνθήκη επιλογής πάνω σε πίνακα και προβολή
+--    δοκιμάστε και =, >=, <=, >, <, <>
+select pid, name
+from performer
+where pid > 5;
+
+
+-- q3 συνθήκη συμμετοχής σε σύνολο
+select pid, name
+from performer
+where pid in (3, 4, 9);
+
+
+-- q4 συνθήκη συμμετοχής σε διάστημα τιμών [α, β]
+select pid, name
+from performer
+where pid between 3 and 8;
+
+
+-- q5 χρήση κανονικών εκφράσεων (reg exp)
+--    ΠΡΟΣΟΧΗ: η Oracle είναι case sensitive στις reg exp
+select pid, name
+from performer
+where name like '%adel%';  -- και '_adel%'
+
+
+-- q6 προβολή όλων των πεδίων του πίνακα
+select *
+from cd;
+
+
+-- q7 προβολή όλων των πεδίων του πίνακα και ταξινόμηση αποτελεσμάτων
+--    σε φθίνουσα σειρά (desc)
+--    Δοκιμάστε και asc
+select *
+from cd
+order by year desc;
+
+
+-- q8 Μπορούμε και πολλαπλή ταξινόμηση
+select *
+from cd
+order by year desc, ctitle;
+
+
+-- q9 Εμφάνιση μόνο διακριτών τιμών
+select year
+from cd;
+
+select distinct year
+from cd;
+
+
+-- q10 αληθής συνθήκη επιλογής (επιστρέφεται ολόκληρος ο πίνακας)
+--    δοκιμάστε με 5=2
+select *
+from cd
+where 2 = 2;
+
+
+-- q11 τεχνητά πεδία στην απάντηση με χρήση συναρτήσεων και πράξεων
+select ctitle, ceil(year/100) century
+from cd;
+
+
+-- q12 γινόμενο πινάκων
+select *
+from cd, track;
+
+
+-- q13 φυσική σύζευξη
+select ctitle, pos
+from cd, track
+where cd.cid = track.cid;
+
+
+-- q14 στη select χρειαζόμαστε performer.pid ή track.pid,
+--     αλλιώς υπάρχει ασάφεια για το ποιο pid μιλάμε
+--     χρήση distinct για απάλειψη διπλοτύπων
+select pid, name
+from performer, track
+where performer.pid = track.pid and pos > 11;
+
+
+-- q15 όλοι οι τίτλοι τραγουδιών που βρίσκονται στη 10η θέση των cd
+select stitle, pid, cid
+from track, song
+where track.sid = song.sid and pos = 10;
+
+
+-- q16 φυσική σύζευξη όλων των πινάκων και ταξινόμηση βάσει τίτλου 
+--     τραγουδιού σε φθίνουσα σειρά 
+select name, ctitle, stitle, year 
+from performer, song, track, cd
+where cd.cid = track.cid and performer.pid = track.pid and song.sid = track.sid
+order by stitle desc;
+
+
+-- q17 ίδιο με το q16 αλλά με χρήση μεταβλητών ως εναλλακτικών ονομάτων πινάκων
+select name, ctitle, stitle, year 
+from performer p, song s, track t, cd c
+where c.cid = t.cid and p.pid = t.pid and s.sid = t.sid;
+
+
+-- q18 σύζευξη υπό συνθήκη (εδώ φυσική σύζευξη)
+select distinct *
+from performer, track
+where performer.pid = track.pid;
+
+
+-- q19 εναλλακτικός τρόπος γραφής (δουλεύει και χωρίς το inner)
+select distinct name, cid
+from performer inner join track on performer.pid = track.pid; (κανονικα θα καναμε χρηση του where)
+
+
+-- q20 η επιπλέον συνθήκη μπορεί να μπει και στο on
+select distinct *
+from performer inner join track on performer.pid = track.pid and cid < 5;
+
+
+-- q21 τίτλοι cd με ονόματα ερμηνευτών
+--     ΠΡΟΣΟΧΗ: δεν δουλεύει στην Oracle - η σύζευξη είναι δυαδική πράξη
+select distinct ctitle, name
+from (cd c join track t on c.cid=t.cid) join performer p on t.pid=p.pid; 
+
+select distinct ctitle, name
+from performer p, cd, track t
+where p.pid=t.pid and cd.cid=t.cid;
+
+
+-- q22 φυσική σύζευξη η οποία κρατά μόνο ένα αντίγραφο της κοινής στήλης (όπως στη σχεσιακή άλγεβρα!)
+select distinct *
+from performer natural join track;
+
+
+-- q23 φυσική σύζευξη με χρήση του using (καλύτερη πρακτική)
+select distinct *
+from performer join track using(pid);
+
+
+-- q24 σύζευξη πίνακα με τον εαυτό του - αλλά παίρνω άχρηστη και περιττή πληροφορία
+--     πρώτα προσθέτω c1.cid <> c2.cid και μετά αλλάζω τη συνθήκη σε < ή >
+select c1.ctitle, c1.year, c2.ctitle, c2.year
+from cd c1, cd c2
+where c1.year = c2.year;
+
+
+-- q25 σύζευξη πίνακα με τον εαυτό του με using
+select c1.ctitle, c1.year, c2.ctitle, c2.year
+from cd c1 join cd c2 using (year)
+where c1.cid > c2.cid;
+
+
+-- q26 φυσική σύζευξη πίνακα με τον εαυτό του
+select *
+from cd c1 natural join cd c2;
+

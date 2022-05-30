@@ -1,0 +1,173 @@
+-- q1 αιτήματα συνάθροισης (avg, max, min, sum, count)
+select avg(year)
+from cd;
+
+
+-- q2 μέση χρονιά κυκλοφορίας των cd της Adele
+select avg(year)
+from (cd join track using(cid)) join performer using(pid)
+where name = 'Adele';
+
+
+-- q3 η σωστή εκδοχή του q2
+select avg(year)
+from cd 
+where cid in (select cid
+              from track join performer using(pid)
+              where name = 'Adele');
+
+			  
+-- q4 πλήθος εγγραφών που ικανοποιούν συνθήκη
+select count(*)
+from cd
+where ctitle > 'k';
+
+
+-- q5 πλήθος ερμηνευτών που ερμηνεύουν κομμάτια
+select count(pid)
+from track;
+
+
+-- q6 παίρνουμε ένα υποσύνολο των cd (δοκιμάστε και με year > 1990)
+select *
+from cd
+where year <= 1990;
+
+
+-- q7 θεωρητικά η παρακάτω συνθήκη είναι πάντα αληθής - είναι όμως έτσι;
+select *
+from cd
+where year <= 1990 or year > 1990;
+
+
+-- q8 να η πάντα αληθής συνθήκη!
+select *
+from cd
+where year <= 1990 or year > 1990 or year is null;
+
+
+-- q9 και αυτή είναι πάντα αληθής (αφού δεν εμπλέκει κανένα πεδίο)
+select *
+from cd
+where 1=1;
+
+
+-- q10 εδώ παίρνουμε το cd με null year χάριν της δεύτερης συνθήκης που δεν εμπλέκει το year
+select *
+from cd
+where year <= 1990 or ctitle < 'K';
+
+
+-- q11 πλήθος μη null καταχωρισμένων ετών
+select count(*)
+from cd
+where year is not null;
+
+
+-- q12 πλήθος μη null διακριτών καταχωρισμένων ετών
+select count(distinct year)
+from cd
+where year is not null;
+
+
+-- q13 παραλείποντας τη συνθήκη παίρνω την ίδια απάντηση (άρα το count δεν μετρά τα null)
+select count(distinct year)
+from cd;
+
+
+-- q14 εδώ όμως παίρνω και τα null
+select distinct year
+from cd;
+
+
+-- q15 ενδιαφέρουσα χρήση του count στη where (δοκιμάστε και με >=, >)
+select *
+from performer p1, performer p2
+where (select count(pid) from track where pid = p1.pid) =
+      (select count(pid) from track where pid = p2.pid)
+      and p1.pid > p2.pid;
+
+	  
+-- q16 έλεγχος πλήθους δυο ομάδων που δημιουργούνται στο from
+select AtoJ.tracks >= KtoZ.tracks
+from (select count(pid) as tracks
+      from performer join track using(pid)
+      where name < 'k') AtoJ,
+     (select count(pid) as tracks
+      from performer join track using(pid)
+      where name >= 'k') KtoZ;
+
+	  
+-- q17 το ίδιο με το q16 αλλά με τα υπο-αιτήματα στο select
+select (select count(pid) as tracks
+        from performer join track using(pid)
+        where name < 'k') >=
+       (select count(pid) as tracks
+        from performer join track using(pid)
+        where name >= 'k') as result
+from cd;
+
+
+-- q18 ομαδοποίηση
+select cid, count(*) 
+from track
+group by cid;
+
+
+-- q19 άλλη μια ομαδοποίηση με χρήση συναρτήσεων αλφαριθμητικών
+select substring(stitle,1,1), count(*) cnt
+from song
+group by substring(stitle,1,1)
+order by cnt desc;
+
+
+-- q20 πιο πολύπλοκη ομαδοποίηση
+select pid, name, count(*)
+from performer p join track t using(pid)
+where name > 'K'
+group by pid;
+
+
+-- q21 ομαδοποίηση δυο επιπέδων
+select cid, substring(stitle,1,1) letter, count(*) cnt
+from track join song using(sid)
+group by cid, substring(stitle,1,1);
+
+
+-- q22 προσοχή στο τί μετράμε
+select year, count(distinct cid)
+from cd join track using(cid)
+group by year;
+
+
+-- q23 πως εμφανίζουμε αυτά που δεν συμμετέχουν σε μια σύζευξη
+select comid, count(*)
+from cd join company using (comid)
+group by comid
+union
+select comid, 0
+from company
+where comid not in (select comid from cd);
+
+
+-- q24 συνθήκη σε επίπεδο ομάδας (having)
+select cid 
+from track
+group by cid
+having count(*) > 13;
+
+
+-- q25 εναλλακτική σύνταξη χωρίς group by ... having
+select distinct cid
+from track t1
+where 13 < (select count(*) from track t2 where t1.cid = t2.cid);
+
+
+-- q26 τα cd που έχουν πλήθος κομματιών μεγαλύτερο από τον μέσο όρο κομματιών ανά cd
+select cid, count(*)
+from track
+group by cid
+having count(*) > (select avg(trackcount)
+                   from (select count(*) as trackcount
+                         from track
+                         group by cid) A);

@@ -1,0 +1,47 @@
+-- View = Query
+-- σχήμα της όψης είναι το σχήμα του αιτήματος
+-- θα μπορούσαμε να ορίσουμε την όψη ως ιδεατό (virtual) πίνακα
+
+
+-- q01 δημιουργία όψης
+create view 21centurycd as
+select * from cd where year > 1999;
+
+
+-- q02 χρήση όψης
+select cc.ctitle, count(*)
+from 21centurycd cc join track t using (cid)
+group by cc.cid;
+
+
+-- q03 ιδεατή εκτέλεση του παραπάνω
+create temporary table temp as
+select * from cd where year > 1999;
+
+select cc.ctitle, count(*)
+from temp cc join track t using (cid)
+group by cc.cid;
+
+drop table temp;
+
+
+-- q04 στην όμως πράξη το DBMS κάνει αυτό (rewritting):
+select cc.ctitle, count(*)
+from (select * from cd where year > 1999) cc join track t using (cid)
+group by cc.cid, cc.ctitle;
+
+
+-- q05 ή για την ακρίβεια αυτό! (αν έχει καλό βελτιστοποιητή)
+select cc.ctitle, count(*)
+from cd cc join track t using (cid)
+where year > 1999
+group by cc.cid, cc.ctitle;
+
+
+-- q06 ορισμός όψης πάνω σε όψη
+create view 21centuryperf as
+select name from (21centurycd join track using(cid)) join performer using(pid);
+
+
+-- q07 τί γίνεται αν διαγράψω την όψη;
+drop view 21centurycd;
