@@ -1,0 +1,177 @@
+header{
+    background-color: red;
+    color: white;
+    height: 3cm;
+    font-size: 30px;
+    width: 30cm;
+}
+
+#span1{
+  position: absolute;
+  left:1000px;
+  top: 100px;
+  font-size: 15px;
+  
+}
+
+#span2{
+    position: absolute;
+  left:1050px;
+  top: 100px;
+  font-size: 15px;
+}
+
+#span3{
+    position: absolute;
+    left:1045px;
+    top: 100px;
+    font-size: 15px;
+}
+
+#div1{
+    background-color: blanchedalmond;
+    width: 6cm;
+    height: 12cm;
+}
+
+#rantevu{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.input1{
+    position: relative;
+   bottom:  400px;
+   top: 2px;
+}
+
+#div2{
+    position: relative;
+    bottom: 530px;
+    left:240px;
+}
+
+img{
+    position: relative;
+    width: 12cm;
+    height: 6cm;
+    top: 80px;
+}
+
+h1{
+    color: rgb(173, 230, 180);
+    position: relative;
+    top: 70px;
+}
+
+.p1{
+    position: relative;
+    top: 80px;
+
+}
+
+footer{
+    background-color: green;
+    position: absolute;
+    top:580px;
+    width: 30cm;
+    padding: 1.5cm;
+}
+#footer2{
+    background-color: green;
+    position: absolute;
+    top:880px;
+    width: 30cm;
+    padding: 1.5cm;
+}
+#span4{
+  position: absolute;
+  left: 10px;
+  bottom: 115px;
+}
+
+#span5{
+    position: absolute;
+    left: 60px;
+    bottom: 115px;
+}
+
+#span6{
+    position: absolute;
+    left: 10px;
+    bottom: 95px;
+}
+
+#span7{
+    position: absolute;
+    left: 57px;
+    bottom: 115px;
+}
+
+#lastdiv{
+    color: white;
+}
+
+.p1{
+    position: absolute;
+    top: 340px;
+}
+
+.p2{
+    position: absolute;
+    top: 360px;
+    
+}
+
+.input_rantevu{
+    position: absolute;
+    top: 400px;
+}
+
+.p3{
+ position: absolute;
+ top: 420px;
+}
+
+#p4{
+  position: absolute;
+ bottom:100px ;
+ left:245px;
+}
+
+ul{
+    list-style-type: none;
+    position: absolute;
+    top: 440px;
+}
+
+#p5{
+    border: 1px solid black;
+    margin-left:245px;
+    width: fit-content;
+    position: absolute;
+    top: 600px;
+    overflow: scroll;
+}
+
+#p6{
+    margin-left:245px;
+    width: fit-content;
+    position: absolute;
+    top: 690px;
+  
+}
+
+.input_email{
+   left:250px;
+    width: fit-content;
+    position: absolute;
+    top: 730px;
+}
+
+button{
+    position: absolute;
+    left: 20px;
+    top: 120px;
+}
+
