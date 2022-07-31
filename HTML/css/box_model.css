@@ -1,0 +1,11 @@
+p{
+    padding: 50px;
+    margin: 100px;
+    background-color: aqua;
+    color: deeppink;
+    border: 15px solid black;
+    border-radius: 3px;
+    box-sizing:content-box;
+    box-shadow: 20px purple;
+    width: fit-content;
+}

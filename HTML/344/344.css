@@ -1,0 +1,26 @@
+ nav {
+    background-color: darkgrey;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    float: left;
+    width: 4cm;
+    height: 10cm;
+}
+
+aside{
+    position: absolute;
+    right: 5px;
+    top: 130px;
+    background-color: darkgray;
+    float: right;
+    justify-content: flex-start;
+    width: 4cm;
+    height: 10cm;
+}
+footer{
+    text-align: center;
+    background-color: darkgrey;
+    position: relative;
+    top: 225px;
+}

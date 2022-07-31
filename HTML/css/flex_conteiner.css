@@ -1,0 +1,13 @@
+.flex-conteiner{
+    display: flex;
+    background-color: rgb(112, 55, 137);
+    border: 15px solid rgb(214, 13, 13);
+}
+
+.flex-conteiner > div{
+    background-color: chartreuse;
+    padding: 40px;
+    width:min-content;
+    font-size: medium;
+    margin: 10px;
+}

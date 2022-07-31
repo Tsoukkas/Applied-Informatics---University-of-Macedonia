@@ -1,0 +1,16 @@
+p{
+   box-sizing:content-box;
+   background-color: orange;
+   border:3px solid red;
+   padding: 10px 20px 20px 25px;
+   position:fixed;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   width: 10%;
+   position: absolute;
+}
+
+button{
+    text-align: center;
+}

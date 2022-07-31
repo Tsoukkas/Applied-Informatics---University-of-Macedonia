@@ -1,0 +1,12 @@
+p{
+    border: 3px solid red;
+    background-color: yellow;
+    margin: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
+    width: fit-content;
+    height: fit-content;
+}
+p:hover{
+    background-color : green;
+}
+

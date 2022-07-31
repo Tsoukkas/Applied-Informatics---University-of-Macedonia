@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<title>First Child, Last Chold</title>
+</head>
+<script src="myscripts.js"></script>
+<body>
+
+    <p>first<em>Second</em>Third<em>Fourth</em>last</p>
+    <p>First<em>Second</em>Last</p>
+    <p>First and Last</p>
+    <input type="button" value="First" onclick="firstc()">
+        <input type="button" value="Last" onclick="lastc()">
+
+</body>
+<script type="text/javascript">
+    function firstc(){
+    document.getElementsByTagName("p")[0].firstChild.data="Pie";
+    document.getElementsByTagName("p")[1].firstChild.data="Pie";
+    document.getElementsByTagName("p")[2].firstChild.data="Pie";
+    
+    }
+    
+    function lastc(){
+    document.getElementsByTagName("p")[0].lastChild.data="cake";
+    document.getElementsByTagName("p")[1].lastChild.data="cake";
+    document.getElementsByTagName("p")[2].lastChild.data="cake";
+    
+    }
+    </script>
+    
+</html>

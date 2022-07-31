@@ -1,0 +1,76 @@
+body{
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section{
+    position: absolute;
+    top: 80px;
+    left: 6cm;
+    font-weight:normal;
+    color: aliceblue;
+    font-size: medium;
+}
+
+h1{
+    color: aliceblue;
+    font-size: 60px;
+ }
+
+ img{
+    width: 7cm;
+    height: 4cm;
+   position: relative;
+    bottom: 160px;
+   left: 1250px;
+ }
+
+ p{
+    position: relative;
+    color: aliceblue;
+    top: -10px;
+ }
+ input{
+    width: fit-content;
+ }
+
+ article{
+    color: aliceblue;
+    position: absolute;
+    left: 30px;
+    top: 260px;
+ }
+
+ aside{
+    color: aliceblue;
+    float: right;
+    position: relative;
+    right: 70px;
+    top: -100px;
+ }
+
+ .h1{
+    position: relative;
+    top: -100px;
+ }
+
+ button{
+    width: 4cm;
+ }
+
+ .h2{
+    position: relative;
+    top: 100px;
+    width: 100%;
+ }
+
+ footer {
+    margin-top: 120px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  

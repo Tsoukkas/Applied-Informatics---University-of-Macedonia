@@ -1,0 +1,29 @@
+.yellow{
+    color: yellow;     
+}
+
+.light_blue{
+    color: aqua;
+}
+
+li:hover {
+    background-color: blue;
+  }
+
+li{
+    list-style-type: none;
+    background-color: orange;
+}
+
+.class{
+    text-align: center;
+    color: darkgoldenrod;
+    background-color: blue;
+    font-weight: bold;
+    font-size: large;
+}
+
+body{
+    background-color: cornflowerblue;
+}
+

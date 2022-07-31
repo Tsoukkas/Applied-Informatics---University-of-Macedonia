@@ -1,0 +1,17 @@
+.td{
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+td{
+    background-color: red;
+    color: rgb(17, 255, 0);
+}
+
+th,
+td{
+    width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}

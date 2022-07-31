@@ -1,0 +1,30 @@
+button{
+    width: fit-content;
+}
+
+input{
+    width: 1cm;
+}
+
+.p1{
+   text-align: center;
+   background-color: dimgray;
+}
+
+header{
+    background-color: bisque;
+}
+
+body{
+    background-color: bisque;
+}
+
+div{
+    background-color: dimgray;
+   
+}
+
+div > button {
+   justify-content: center;
+}
+

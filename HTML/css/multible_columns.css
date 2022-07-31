@@ -1,0 +1,22 @@
+p{
+    text-align: center;
+    margin-left: 47px;
+    border: 5px solid black;
+    margin-bottom: 5px;
+}
+
+
+.multible_columns{
+    column-count: 3;
+    text-align: center;
+}
+
+div{
+    column-gap: 40px;
+    background-color: gold;
+   column-rule-color: black;
+   column-width: 5px;
+   text-align: center;
+    column-rule-width: 1px;
+    column-rule: 1px solid red;
+  }

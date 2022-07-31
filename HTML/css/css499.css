@@ -1,0 +1,27 @@
+img{
+    float:left;
+    width: 400px;
+    height: 400px;
+}
+
+#demo{
+    color: red;
+}
+
+#img1{
+  float:bottom;
+  width: 100px;
+  height: 100px;
+}
+
+#img2{
+    float:bottom;
+    width: 100px;
+    height: 100px;
+}
+
+#img3{
+    float:bottom;
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: red;
+    padding: -20px;
+    color: white;
+  }
+
+  
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+    float: left;
+    width: 20%;
+    height: 350px; /* only for demonstration, should be removed */
+    background: rgb(176, 178, 111);
+    padding: 20px;
+  }
+
+  nav > p{
+    text-decoration: underline;
+  }
+  
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  article {
+    float: left;
+    padding-top: 10px;
+    padding: 20px;
+    width: 80%;
+    background-color: #f1f1f1;
+    height: 350px; /* only for demonstration, should be removed */
+  }
+  
+  /* Clear floats after the columns */
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: rgb(49, 196, 30);
+    padding: 10px;
+    color: white;
+  }
+  
+  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+  @media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  img{
+    width: 5cm;
+    height: 5cm;
+  }
+
+ #f1{
+    position: relative;
+    left: 1300px;
+    top: 60px;
+ } 
+
+ 
+ #f2{
+    position: relative;
+    left: 1360px;
+    top: 28px;
+
+ } 
+
+ 
+ #f3{
+    position: relative;
+    left: 1380px;
+    top: -6px;
+ } 
+
+ #f4{
+    position: relative;
+    left: 10px;
+   
+    bottom: 20px;
+ } 
+
+ 
+ #f5{
+    position: relative;
+    left: 65px;
+    bottom: 53px;
+
+ } 
+
+ 
+ #f6{
+    position: relative;
+    left: 80px;
+    bottom: 87px;
+ } 
+  

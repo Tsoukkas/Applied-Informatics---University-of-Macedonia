@@ -1,0 +1,41 @@
+.grid-container{
+   display: grid;
+   background-color: rgb(178, 172, 133) ;
+   grid-template-columns: auto auto auto;
+   padding: 10px;
+  text-align: center;
+  
+}
+
+.grid-container > div{
+   border: 5px solid black;
+   text-align: center;
+   font-size: 30px;
+   
+}
+
+#img1{
+    width: 5cm;
+    height: 5cm;
+    position: fixed;   
+    left:380px ;
+    top: 300px;
+}
+
+#img2{
+    width: 5cm;
+    height: 5cm;
+    position: fixed;
+    left: 700px;
+    top: 300px;
+
+}
+
+p{
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
