@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0l65glp" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.3.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="Decision_16ow0ny" name="ΥΠΕΥΘΥΝΟΣ ΕΡΓΟΥ" />
+  <decision id="Decision_02yp1rn" name="ΥΠΕΥΘΥΝΟΣ ΤΕΧΝΙΤΗΣ ΥΠΟΣΤΗΡΙΞΗΣ">
+    <informationRequirement id="InformationRequirement_0zafysz">
+      <requiredDecision href="#Decision_16ow0ny" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_0wuf5ng" name="ΥΠΕΥΘΥΝΟΣ ΥΛΟΠΟΙΗΣΗΣ">
+    <informationRequirement id="InformationRequirement_0iocl7o">
+      <requiredDecision href="#Decision_16ow0ny" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_1jsptom" name="ΥΠΕΥΘΥΝΟΣ ΑΝΑΛΥΣΗΣ">
+    <informationRequirement id="InformationRequirement_0y1sdnn">
+      <requiredDecision href="#Decision_16ow0ny" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_1bs4u25" name="ΥΠΕΥΘΥΝΟΣ ΣΧΕΔΙΑΣΗΣ">
+    <informationRequirement id="InformationRequirement_123z1b8">
+      <requiredDecision href="#Decision_16ow0ny" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_040x93h" name="ΕΞΗΠΗΡΕΤΙΣΗ ΠΕΛΑΤΩΝ">
+    <informationRequirement id="InformationRequirement_0pvryns">
+      <requiredDecision href="#Decision_02yp1rn" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_0d3oenl" name="ΥΠΕΥΘΥΝΟΣ ΒΑΣΕΩΝ ΔΕΔΟΜΕΝΩΝ">
+    <informationRequirement id="InformationRequirement_1hfohrw">
+      <requiredDecision href="#Decision_02yp1rn" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_1dr9igc" name="ΠΡΟΓΡΑΜΑΤΙΣΤΗΣ">
+    <informationRequirement id="InformationRequirement_1f6ah5m">
+      <requiredDecision href="#Decision_0wuf5ng" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_07z4ucr" name="ΥΠΕΥΘΥΝΟΣ ΑΣΦΑΛΕΙΑΣ">
+    <informationRequirement id="InformationRequirement_1otpe2d">
+      <requiredDecision href="#Decision_02yp1rn" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_00x1cda" name="ΑΝΑΛΥΤΗΣ ΠΛΗΡΟΦΟΡΙΑΚΟΥ ΣΥΣΤΗΜΑΤΟΣ">
+    <informationRequirement id="InformationRequirement_1u4dd25">
+      <requiredDecision href="#Decision_1jsptom" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_0hgraon" name="ΓΡΑΦΙΣΤΑΣ">
+    <informationRequirement id="InformationRequirement_068rbii">
+      <requiredDecision href="#Decision_1bs4u25" />
+    </informationRequirement>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="DMNShape_19s97q8" dmnElementRef="Decision_16ow0ny">
+        <dc:Bounds height="80" width="180" x="1040" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_05bgdyf" dmnElementRef="Decision_02yp1rn">
+        <dc:Bounds height="80" width="180" x="490" y="290" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1yiv4h1" dmnElementRef="Decision_0wuf5ng">
+        <dc:Bounds height="80" width="180" x="780" y="290" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1ga46mo" dmnElementRef="Decision_1jsptom">
+        <dc:Bounds height="80" width="180" x="1040" y="300" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1flp2yu" dmnElementRef="Decision_1bs4u25">
+        <dc:Bounds height="80" width="180" x="1380" y="290" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1gxzfp4" dmnElementRef="InformationRequirement_0y1sdnn">
+        <di:waypoint x="1130" y="160" />
+        <di:waypoint x="1130" y="280" />
+        <di:waypoint x="1130" y="300" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_00sun9w" dmnElementRef="InformationRequirement_123z1b8">
+        <di:waypoint x="1130" y="160" />
+        <di:waypoint x="1130" y="260" />
+        <di:waypoint x="1470" y="270" />
+        <di:waypoint x="1470" y="290" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1nt91h6" dmnElementRef="InformationRequirement_0iocl7o">
+        <di:waypoint x="1130" y="160" />
+        <di:waypoint x="1130" y="260" />
+        <di:waypoint x="870" y="270" />
+        <di:waypoint x="870" y="290" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0hc0sl6" dmnElementRef="InformationRequirement_0zafysz">
+        <di:waypoint x="1130" y="160" />
+        <di:waypoint x="1130" y="260" />
+        <di:waypoint x="580" y="270" />
+        <di:waypoint x="580" y="290" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1s44psj" dmnElementRef="Decision_040x93h">
+        <dc:Bounds height="80" width="180" x="670" y="420" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1trcqt8" dmnElementRef="Decision_0d3oenl">
+        <dc:Bounds height="80" width="180" x="400" y="430" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0rcm3wk" dmnElementRef="Decision_1dr9igc">
+        <dc:Bounds height="80" width="180" x="920" y="420" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1t9y2r7" dmnElementRef="InformationRequirement_0pvryns">
+        <di:waypoint x="580" y="370" />
+        <di:waypoint x="760" y="400" />
+        <di:waypoint x="760" y="420" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1e1epad" dmnElementRef="InformationRequirement_1hfohrw">
+        <di:waypoint x="580" y="370" />
+        <di:waypoint x="490" y="410" />
+        <di:waypoint x="490" y="430" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0g56q4j" dmnElementRef="InformationRequirement_1f6ah5m">
+        <di:waypoint x="870" y="370" />
+        <di:waypoint x="1010" y="400" />
+        <di:waypoint x="1010" y="420" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1ycg4u2" dmnElementRef="Decision_07z4ucr">
+        <dc:Bounds height="80" width="180" x="160" y="430" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1npy4el" dmnElementRef="InformationRequirement_1otpe2d">
+        <di:waypoint x="580" y="370" />
+        <di:waypoint x="250" y="410" />
+        <di:waypoint x="250" y="430" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1bmsoy8" dmnElementRef="Decision_00x1cda">
+        <dc:Bounds height="80" width="180" x="1240" y="410" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0pfhltd" dmnElementRef="InformationRequirement_1u4dd25">
+        <di:waypoint x="1130" y="380" />
+        <di:waypoint x="1330" y="390" />
+        <di:waypoint x="1330" y="410" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1m9v8f7" dmnElementRef="Decision_0hgraon">
+        <dc:Bounds height="80" width="180" x="1550" y="410" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1mp6h66" dmnElementRef="InformationRequirement_068rbii">
+        <di:waypoint x="1470" y="370" />
+        <di:waypoint x="1640" y="390" />
+        <di:waypoint x="1640" y="410" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
