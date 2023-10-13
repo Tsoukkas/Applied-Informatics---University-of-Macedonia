@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FootballSelection</string>
+    <string name="WorldClass" translatable="false">WorldClass</string>
+    <string name="Goat" translatable="false">Goat</string>
+    <string name="Elite" translatable="false">Elite</string>
+    <string-array name="table">
+        <item>@string/Goat</item>
+        <item>@string/WorldClass</item>
+        <item>@string/Elite</item>
+    </string-array>
+</resources>
